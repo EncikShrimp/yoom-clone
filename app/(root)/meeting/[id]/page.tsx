@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-const page = ({ params }: Props) => {
+const MeetingPage = ({ params }: Props) => {
   const { user, isLoaded } = useUser();
   const { call, isCallLoading } = useGetCallById(params.id);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
@@ -36,4 +36,4 @@ const page = ({ params }: Props) => {
   );
 };
 
-export default page;
+export default MeetingPage;
