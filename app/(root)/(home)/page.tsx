@@ -5,13 +5,19 @@ type Props = object;
 
 const Home = ({}: Props) => {
   const now = new Date();
+  // Get the time in Kuala Lumpur
   const time = now.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Asia/Kuala_Lumpur",
   });
-  const date = new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(
-    now
-  );
+
+  // Get the date in Kuala Lumpur
+  const date = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "full",
+    timeZone: "Asia/Kuala_Lumpur",
+  }).format(now);
+
   return (
     <section className="flex size-full flex-col gap-10 text-white">
       <div className="h-[300px] w-full rounded-[20px] bg-hero bg-cover">
